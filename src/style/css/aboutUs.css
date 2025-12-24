@@ -1,0 +1,98 @@
+.about-us-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px; /* Ajusta el padding para hacerlo más adecuado */
+  margin-bottom: 100px;
+
+}
+
+.about-us-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.about-us-text {
+    width: 40%; /* Ajusté el ancho a 50% para pantallas grandes */
+}
+
+.about-us-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: rgb(20, 68, 38);
+    margin-bottom: 20px;
+}
+
+.about-us-description {
+    font-size: 18px;
+    color: #333333;
+    line-height: 1.6;
+}
+
+.about-us-image {
+    width: 50%;
+    text-align: center;
+}
+
+.about-us-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .about-us-container {
+        padding: 20px; /* Menos padding en dispositivos móviles */
+    }
+
+    .about-us-content {
+        flex-direction: column; /* Apilar elementos verticalmente */
+        align-items: center;
+    }
+
+    .about-us-text,
+    .about-us-image {
+        width: 100%; /* Hace que ambos se adapten al 100% de ancho */
+    }
+
+    .about-us-title {
+        font-size: 28px; /* Ajusta el tamaño de la fuente en pantallas pequeñas */
+        text-align: center; /* Centra el título */
+    }
+
+    .about-us-description {
+        font-size: 16px; /* Reduce el tamaño de la descripción en pantallas pequeñas */
+        text-align: center; /* Centra el texto */
+    }
+
+    .about-us-image img {
+        border-radius: 5px; /* Ajusta el radio del borde en móviles */
+    }
+}
+
+.about-us-services {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaciado entre títulos */
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .about-us-services h1 {
+    font-size: 24px;
+    color: rgb(20, 68, 38);
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaciado entre el ícono y el texto */
+  }
+  
+  
+  .about-us-services .icon {
+    font-size: 28px;
+    color: #141414;
+  }

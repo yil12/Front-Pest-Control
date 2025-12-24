@@ -1,0 +1,34 @@
+
+/* Agrega esto a tu archivo CSS (por ejemplo, en navbar.css o en un archivo global) */
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+
+section { scroll-margin-top: 110px; } 
+@media (max-width: 768px) {
+  section { scroll-margin-top: 120px; }  
+}
+
+* {
+  box-sizing: inherit;
+}
+
+  
+ .home-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: visible; /* Asegura que no haya scroll interno vertical */
+}
+

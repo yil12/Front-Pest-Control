@@ -1,0 +1,232 @@
+/* Fondo que bloquea la interacción */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  padding-top: env(safe-area-inset-top); /* ✅ Evita que se esconda detrás de la barra de estado en iOS */
+}
+
+/* Modal principal */
+.modal {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  margin-top: 0; /* Asegura que no tenga margen superior extra */
+}
+
+/* Botón de cerrar - ahora con posición más segura */
+.modal-close {
+  position: absolute;
+  top: calc(15px + env(safe-area-inset-top)); /* ✅ Se ajusta a la barra de estado */
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: #ff0000;
+}
+
+/* Columna izquierda */
+.modal-left {
+  background-color: #eef2ff;
+  width: 45%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+
+.modal-left h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgb(20, 68, 38);
+  margin-bottom: 1rem;
+}
+
+.modal-left p {
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0;
+}
+
+/* Columna derecha (formulario) */
+.modal-right {
+  width: 55%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+/* Encabezado */
+.modal-right h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Formulario */
+.modal-right form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs y textarea */
+.modal input,
+.modal textarea {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+/* ✅ Checkbox corregido: alineado perfectamente */
+.modal-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.modal-checkbox input[type="checkbox"] {
+  margin: 0;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  accent-color: rgb(20, 68, 38);
+  cursor: pointer;
+}
+
+.modal-checkbox label {
+  color: #444;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.modal-checkbox a {
+  color: rgb(20, 68, 38);
+  text-decoration: underline;
+}
+
+/* Botón enviar */
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.send-btn {
+  background-color: rgb(20, 68, 38);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+.send-btn:hover {
+  background-color: #144426;
+}
+
+/* reCAPTCHA (si se usa en el futuro) */
+.recaptcha-container {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* 📱 Responsive para móviles */
+@media (max-width: 768px) {
+  .modal {
+    flex-direction: column;
+    height: auto;
+    max-height: 95vh;
+    width: 95%;
+    margin-top: 0;
+  }
+
+  .modal-left,
+  .modal-right {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .modal-left {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .modal-right {
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    padding: 1.5rem;
+  }
+
+  .modal input,
+  .modal textarea {
+    font-size: 1rem;
+  }
+
+  .modal-checkbox {
+    font-size: 0.9rem;
+    gap: 0.75rem;
+  }
+
+  .modal-checkbox input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-buttons {
+    justify-content: center;
+  }
+
+  /* Ajuste adicional para móviles: asegurar que el close esté visible */
+  .modal-close {
+    top: calc(15px + env(safe-area-inset-top));
+    right: 15px;
+    font-size: 24px;
+  }
+}
+
+.modal-overlay {
+  padding-top: calc(70px + env(safe-area-inset-top));
+}

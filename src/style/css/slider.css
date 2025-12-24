@@ -1,0 +1,51 @@
+.slider-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 40px auto; /* reduce espacio después del slider */
+  overflow: hidden;
+}
+
+  
+  .slick-slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  /* Estilos para la imagen y overlay */
+  .slider-item {
+    position: relative; /* Necesario para posicionar el texto de forma absoluta */
+  }
+  
+  .slogan-overlay {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustar para asegurar el centro exacto */
+    color: rgba(140, 226, 173, 0.836);;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Añade sombra al texto para mejorar la legibilidad */
+    background-color: rgba(36, 32, 32, 0.5); /* Fondo oscuro con transparencia para mejorar la visibilidad del texto */
+    padding: 10px;
+    border-radius: 15px;
+  }
+  
+  /* Personaliza los puntos de navegación si es necesario */
+  .slick-dots {
+    bottom: 10px; /* Coloca los puntos en la parte inferior */
+    z-index: 10;
+  }
+  .slick-dots li button:before {
+    color: rgb(18, 87, 55); /* Cambiar color de los puntos */
+    font-size: 18px;
+  }
+  
+  .title{
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
